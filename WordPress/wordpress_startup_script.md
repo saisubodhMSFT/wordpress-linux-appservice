@@ -4,7 +4,7 @@ In this article, you learn about configuring a custom startup script, if needed,
 
 The major problem that is solved using startup script is updating files in non-persistent storage (see App Service Storage section). Linux App Service architecture inherently has non-persistent storage i.e. file changes do not sustain after app restart. Custom configuration of any tool such as nginx wouldn't be possible by simply updating nginx config files since they would revert back when the app service restarts. Startup script enables you to add startup commands that are executed after an app container starts to make file changes that sustain through app restarts. 
  
- Alternatively, you can navigate to file manager through this URL : _/<wordpressAppName/>.scm.azurewebsites.net/newui/fileManager_. Upload a custom configuration file (ex: /home/custom-spec-settings.conf) and run the following code snippet
+ Alternatively, you can navigate to file manager through this URL : _\<wordpressAppName\>.scm.azurewebsites.net/newui/fileManager_. Upload a custom configuration file (ex: /home/custom-spec-settings.conf) and run the following code snippet
 
 ```
 cp /home/custom-spec-settings.conf /etc/nginx/conf.d/spec-settings.conf

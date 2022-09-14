@@ -30,6 +30,23 @@ cp /home/custom-spec-settings.conf /etc/nginx/conf.d/spec-settings.conf
 /usr/sbin/nginx -s reload
 ```
 
+
+Alternatively, you can follow these steps for the same result
+* Copy the required config file to /home directory 
+```
+cp /etc/nginx/conf.d/spec-settings.conf /home/custom-spec-settings.conf
+```
+* Edit /home/custom-spec-settings.conf using vi/vim editors to add custom settings.
+
+NOTE: you can also upload a custom config file to /home directory using file manager. Navigate to file manager through this URL : _\<wordpressAppName\>.scm.azurewebsites.net/newui/fileManager_. Upload the custom configuration file in /home directory (ex: /home/custom-spec-settings.conf)
+
+Copy the following code snippet to /home/dev/startup.sh.
+
+```
+cp /home/custom-spec-settings.conf /etc/nginx/conf.d/spec-settings.conf
+/usr/sbin/nginx -s reload
+```
+
 ## App Service Storage
  
 WordPress App Services (Linux) use a central App Service Storage which is a remote storage volume mounted onto the '/home' directory in the app container. App Service Storage is persistent storage and used to host the WordPress code (in /home/site/wwwroot). It is shared across containers when the app service is scaled out to multiple instances.

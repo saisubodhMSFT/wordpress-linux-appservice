@@ -14,6 +14,21 @@ cp /home/custom-spec-settings.conf /etc/nginx/conf.d/spec-settings.conf
  
 It is a bash script (in /home/dev/startup.sh) that is executed each time an app container starts and the changes made by startup commands remain constant throughout.
 
+Alternatively, you can follow these steps for the same result
+* Copy the required config file to /home directory 
+```
+cp /etc/nginx/conf.d/spec-settings.conf /home/custom-spec-settings.conf
+```
+* Edit /home/custom-spec-settings.conf with the required settings.
+
+NOTE: you can also upload a custom config file to /home directory using file manager. Navigate to file manager through this URL : _\<wordpressAppName\>.scm.azurewebsites.net/newui/fileManager_. Upload the custom configuration file in /home directory (ex: /home/custom-spec-settings.conf)
+
+Copy/paste the following code snipper in /home/dev/startup.sh.
+
+```
+cp /home/custom-spec-settings.conf /etc/nginx/conf.d/spec-settings.conf
+/usr/sbin/nginx -s reload
+```
 
 ## App Service Storage
  

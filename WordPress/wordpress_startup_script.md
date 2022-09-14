@@ -34,7 +34,7 @@ cp /etc/nginx/conf.d/spec-settings.conf /home/custom-spec-settings.conf
  
 NOTE: you can also upload a custom config file to /home directory using file manager. Navigate to file manager through this URL : _\<Wordpress_App_Name\>.scm.azurewebsites.net/newui/fileManager_. Upload the custom configuration file in /home directory (ex: /home/custom-spec-settings.conf)
  
-Copy the following code snippet to /home/dev/startup.sh.
+* Copy the following code snippet to /home/dev/startup.sh.
  
 ```
 cp /home/custom-spec-settings.conf /etc/nginx/conf.d/spec-settings.conf
